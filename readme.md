@@ -40,8 +40,3 @@ npm run build
 * `src/components` - folder with custom `.vue` components
 * `src/store` - app store for vue
 * `static/` - folder with extra static assets that will be copied into output folder
-
-## License
-[MIT](./LICENSE)
-
-Copyright (c) 2018-present, [Evgenii Vedegis](https://github.com/vedees)
