@@ -11,13 +11,13 @@
     "> 1%",
     "last 3 version"
   ],
-  "author": "https://github.com/vedees",
+  "author": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vedees/webpack-template.git"
+    "url": "//myrepository"
   },
   "bugs": {
-    "url": "https://github.com/vedees/webpack-template/issues"
+    "url": "//github/issues"
   },
   "keywords": [
     "webpack",
@@ -57,5 +57,5 @@
     "vue": "^2.6.10",
     "vuex": "^3.1.1"
   },
-  "homepage": "https://github.com/vedees/webpack-template#readme"
+  "homepage": "https://github.com/pandrosov/#readme"
 }
