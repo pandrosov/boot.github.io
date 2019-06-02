@@ -12,4 +12,3 @@ import './assets/css/main.css'
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
 // Vue.js
-import './js/vue/vue.js'
