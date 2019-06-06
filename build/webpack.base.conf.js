@@ -3,6 +3,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+/*
+IMAGE PLUGIN
+ */
+const ImageminPlugin = require("imagemin-webpack");
+
+// Before importing imagemin plugin make sure you add it in `package.json` (`dependencies`) and install
+const imageminGifsicle = require("imagemin-gifsicle");
+const imageminJpegtran = require("imagemin-jpegtran");
+const imageminOptipng = require("imagemin-optipng");
+const imageminSvgo = require("imagemin-svgo");
+
 
 const PATHS = {
   src: path.join(__dirname, '../src'),
@@ -107,7 +118,29 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: `${PATHS.src}/index.html`,
       filename: './index.html',
-      inject: true
+      iginject: true
+    }),
+    new ImageminPlugin({
+      bail: true, // Ignore errors on corrupted images
+      cache: true,
+      imageminOptions: {
+        // Lossless optimization with custom option
+        // Feel free to experement with options for better result for you
+        plugins: [
+          imageminGifsicle({
+            interlaced: true
+          }),
+          imageminJpegtran({
+            progressive: true
+          }),
+          imageminOptipng({
+            optimizationLevel: 5
+          }),
+          imageminSvgo({
+            removeViewBox: true
+          })
+        ]
+      }
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
